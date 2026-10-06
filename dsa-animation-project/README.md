@@ -4,7 +4,7 @@
 
 A Java-based Data Structures and Algorithms learning platform designed to make DSA understandable through step-by-step animation.
 
-The core algorithms are implemented manually in Java. The animation layer consumes algorithm steps so the learner can see comparisons, swaps, pointer movement, insertions, deletions, rotations, queue operations, stack operations, and search decisions.
+The core algorithms are implemented manually in Java. The visualization layer consumes algorithm steps so learners can see comparisons, swaps, recursion, pointer movement, writes, heap operations, and search decisions.
 
 ## Sorting Algorithms
 
@@ -14,12 +14,15 @@ The core algorithms are implemented manually in Java. The animation layer consum
 - Merge Sort
 - Quick Sort
 - Heap Sort
+- Counting Sort
+- Radix Sort
 
 ## Searching Algorithms
 
 - Linear Search
 - Binary Search
 - Jump Search
+- Interpolation Search
 
 ## Data Structures
 
@@ -39,15 +42,28 @@ The core algorithms are implemented manually in Java. The animation layer consum
 
 ## Architecture
 
-Algorithm classes generate AnimationStep objects. The animation layer can replay those steps at a controlled speed through JavaFX or Swing.
+Algorithm classes generate AnimationStep objects. The JavaFX animation layer replays those steps at a controlled speed.
 
-This separates DSA logic from visualization, allowing the same implementation to be tested and animated.
+This separates DSA logic from visualization. The algorithms can therefore be tested independently while the same logic powers the visualizer.
+
+## Visualizer
+
+The project includes a JavaFX application with:
+
+- Algorithm selection
+- Animated array bars
+- Highlighted elements
+- Step-by-step state changes
+- Adjustable animation speed
+- Operation status display
+
+The visualizer currently animates the major comparison-based sorting algorithms. The same AnimationStep architecture can be extended to searching, trees, linked lists, stacks, queues, heaps, and graphs.
 
 ## Learning Goals
 
-- Understand operations instead of memorizing code.
-- Observe algorithm state after every important operation.
-- Compare time and space complexity.
+- Understand every operation instead of memorizing code.
+- Observe the array state after important operations.
+- Understand time and space complexity.
 - Understand recursion and divide-and-conquer visually.
 - Understand pointer and reference movement.
 - Understand tree rotations and heapification.
@@ -55,6 +71,26 @@ This separates DSA logic from visualization, allowing the same implementation to
 
 ## Run
 
-Compile the Java files and run wateranimation.Main.
+Install Java 17 and Maven.
 
-The console version prints algorithm steps and provides the foundation for a graphical animation interface.
+From the dsa-animation-project directory:
+
+mvn javafx:run
+
+For the console algorithm demonstration:
+
+Compile the Java sources and run wateranimation.Main.
+
+## Project Structure
+
+- AnimationStep.java
+- AnimationRecorder.java
+- SortingAlgorithms.java
+- MoreSortingAlgorithms.java
+- SearchingAlgorithms.java
+- MoreSearchingAlgorithms.java
+- Stack.java
+- Queue.java
+- AnimationApp.java
+- Main.java
+- pom.xml
