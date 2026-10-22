@@ -23,7 +23,7 @@ def classify_request(text):
 
 def extract_record(text, document_name="document"):
     emails = list(dict.fromkeys(EMAIL_RE.findall(text)))
-    phones = list(dict.fromkeys(match.strip() for match in PHONE_RE.findall(text)))
+    phone_candidates = [match.strip() for match in PHONE_RE.findall(text)]\n    phones = list(dict.fromkeys(value for value in phone_candidates if len(re.sub(r"\\D", "", value)) >= 10 and not DATE_RE.fullmatch(value.strip())))
     dates = list(dict.fromkeys(DATE_RE.findall(text)))
     amounts = list(dict.fromkeys(AMOUNT_RE.findall(text)))
     refs = list(dict.fromkeys(match.upper().replace(" ", "-") for match in REFERENCE_RE.findall(text)))
