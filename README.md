@@ -24,7 +24,7 @@ A document-intake prototype that extracts text from PDF/TXT files, classifies re
 ### Water Distribution System
 A Java graph-based model for distributing limited water through a pipe network, calculating house demand, and searching alternate routes when pipes fail.
 - **Stack:** Java, OOP, adjacency lists, DFS, Collections Framework
-- **Code and overview:** [Water Distribution System](./README.md)
+- **Java source:** [Browse source files](./src) · [Project folder](./alumni-network-project)
 
 ## How to Run
 Each project has its own README with setup instructions, dependencies, and test commands. These are portfolio prototypes; review each project's limitations before using it with real data. No API keys or secrets should be committed to this repository.
